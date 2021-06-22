@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bns:Component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bns="http://api.platform.boomi.com/" folderFullPath="Boomi_EricBarner/** Forrester (2021)/Scenario 5 - DevOps" componentId="51d98024-ae58-4f6b-9596-068069f4dd29" version="1" name="Work Directory" type="connector-settings" subType="disk" createdDate="2021-06-21T18:53:23Z" createdBy="eric_barner@dell.com" modifiedDate="2021-06-21T18:53:23Z" modifiedBy="eric_barner@dell.com" deleted="false" currentVersion="true" folderName="Scenario 5 - DevOps" folderId="Rjo0MTA1Mzg1" copiedFromComponentId="74f2a9e6-7bf7-4195-8712-42a8601b2b99" copiedFromComponentVersion="21">
+  <bns:encryptedValues/>
+  <bns:description/>
+  <bns:object>
+    <DiskSettings xmlns="" directory="work"/>
+  </bns:object>
+</bns:Component>

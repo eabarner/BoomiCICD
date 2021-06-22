@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bns:Component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bns="http://api.platform.boomi.com/" folderFullPath="Boomi_EricBarner/** Forrester (2021)/Scenario 5 - DevOps" componentId="04a57406-9e93-4d56-8a84-189dad06e795" version="1" name="&#9;Sample Functional Test - Simple FF" type="process" createdDate="2021-06-21T18:53:23Z" createdBy="eric_barner@dell.com" modifiedDate="2021-06-21T18:53:23Z" modifiedBy="eric_barner@dell.com" deleted="false" currentVersion="true" folderName="Scenario 5 - DevOps" folderId="Rjo0MTA1Mzg1" copiedFromComponentId="74f2a9e6-7bf7-4195-8712-42a8601b2b99" copiedFromComponentVersion="21">
+  <bns:encryptedValues/>
+  <bns:description>Test on a non-cloud atom. CICD_TEST_MODE = TEST|CAPTURE|&lt;blank&gt;. </bns:description>
+  <bns:object>
+    <process xmlns="" allowSimultaneous="true" enableUserLog="false" processLogOnErrorOnly="false" purgeDataImmediately="false" updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start" userlabel="" x="48.0" y="48.0">
+          <configuration>
+            <passthroughaction/>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape22" x="224.0" y="57.0">
+              <linesegment length="0" name="shape1.dragpoint1.lineseg1" orient="horizontal" x="82.0" y="63.0"/>
+              <linesegment length="0" name="shape1.dragpoint1.lineseg2" orient="vertical" x="82.0" y="63.0"/>
+              <linesegment length="79" name="shape1.dragpoint1.lineseg3" orient="horizontal" x="82.0" y="63.0"/>
+              <linesegment length="0" name="shape1.dragpoint1.lineseg4" orient="vertical" x="161.0" y="63.0"/>
+              <linesegment length="63" name="shape1.dragpoint1.lineseg5" orient="horizontal" x="161.0" y="63.0"/>
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="stop_icon" name="shape7" shapetype="stop" userlabel="" x="1344.0" y="48.0">
+          <configuration>
+            <stop continue="true"/>
+          </configuration>
+          <dragpoints/>
+        </shape>
+        <shape image="dataprocess_icon" name="shape12" shapetype="dataprocess" userlabel="Injection Point 29 - Salesforce Accounts" x="432.0" y="48.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="2" name="Custom Scripting" processtype="12">
+                <dataprocessscript language="groovy">
+                  <script>import java.util.Properties;
+import java.io.InputStream;
+import com.boomi.execution.ExecutionUtil;
+ExecutionUtil.setDynamicProcessProperty("CICD_POINT_ID", "29", false);
+
+for( int i = 0; i &lt; dataContext.getDataCount(); i++ ) {
+    InputStream is = dataContext.getStream(i);
+    Properties props = dataContext.getProperties(i);
+
+    dataContext.storeStream(is, props);
+}</script>
+                </dataprocessscript>
+              </step>
+              <step index="2" key="1" name="Custom Scripting" processtype="12">
+                <dataprocessscript componentId="576f744a-3357-4fe9-b7bb-1cded4dec8d9" language="groovy2" useComponent="true">
+                  <script>import java.util.Properties;
+import java.io.InputStream;
+
+for( int i = 0; i &lt; dataContext.getDataCount(); i++ ) {
+    InputStream is = dataContext.getStream(i);
+    Properties props = dataContext.getProperties(i);
+
+    dataContext.storeStream(is, props);
+}</script>
+                </dataprocessscript>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape12.dragpoint1" toShape="shape15" x="592.0" y="57.0">
+              <linesegment length="0" name="shape12.dragpoint1.lineseg1" orient="horizontal" x="466.0" y="63.0"/>
+              <linesegment length="0" name="shape12.dragpoint1.lineseg2" orient="vertical" x="466.0" y="63.0"/>
+              <linesegment length="71" name="shape12.dragpoint1.lineseg3" orient="horizontal" x="466.0" y="63.0"/>
+              <linesegment length="0" name="shape12.dragpoint1.lineseg4" orient="vertical" x="537.0" y="63.0"/>
+              <linesegment length="55" name="shape12.dragpoint1.lineseg5" orient="horizontal" x="537.0" y="63.0"/>
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="dataprocess_icon" name="shape13" shapetype="dataprocess" userlabel="Test Point 39 - Verify Flat File" x="992.0" y="48.0">
+          <configuration>
+            <dataprocess>
+              <step index="1" key="2" name="Custom Scripting" processtype="12">
+                <dataprocessscript language="groovy">
+                  <script>import java.util.Properties;
+import java.io.InputStream;
+import com.boomi.execution.ExecutionUtil;
+ExecutionUtil.setDynamicProcessProperty("CICD_POINT_ID", "39", false);
+for( int i = 0; i &lt; dataContext.getDataCount(); i++ ) {
+    InputStream is = dataContext.getStream(i);
+    Properties props = dataContext.getProperties(i);
+
+    dataContext.storeStream(is, props);
+}</script>
+                </dataprocessscript>
+              </step>
+              <step index="2" key="1" name="Custom Scripting" processtype="12">
+                <dataprocessscript componentId="8a2402bf-96a8-4172-a3dd-36bc9a049c21" language="groovy2" useComponent="true">
+                  <script>import java.util.Properties;
+import java.io.InputStream;
+
+for( int i = 0; i &lt; dataContext.getDataCount(); i++ ) {
+    InputStream is = dataContext.getStream(i);
+    Properties props = dataContext.getProperties(i);
+
+    dataContext.storeStream(is, props);
+}</script>
+                </dataprocessscript>
+              </step>
+            </dataprocess>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape13.dragpoint1" toShape="shape39" x="1200.0" y="57.0">
+              <linesegment length="0" name="shape13.dragpoint1.lineseg1" orient="horizontal" x="1026.0" y="63.0"/>
+              <linesegment length="0" name="shape13.dragpoint1.lineseg2" orient="vertical" x="1026.0" y="63.0"/>
+              <linesegment length="95" name="shape13.dragpoint1.lineseg3" orient="horizontal" x="1026.0" y="63.0"/>
+              <linesegment length="0" name="shape13.dragpoint1.lineseg4" orient="vertical" x="1121.0" y="63.0"/>
+              <linesegment length="79" name="shape13.dragpoint1.lineseg5" orient="horizontal" x="1121.0" y="63.0"/>
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="map_icon" name="shape15" shapetype="map" userlabel="" x="608.0" y="48.0">
+          <configuration>
+            <map mapId="75157c5a-510d-4d2c-acb0-4a47662337fb"/>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape15.dragpoint1" toShape="shape36" x="784.0" y="57.0">
+              <linesegment length="0" name="shape15.dragpoint1.lineseg1" orient="horizontal" x="642.0" y="63.0"/>
+              <linesegment length="0" name="shape15.dragpoint1.lineseg2" orient="vertical" x="642.0" y="63.0"/>
+              <linesegment length="79" name="shape15.dragpoint1.lineseg3" orient="horizontal" x="642.0" y="63.0"/>
+              <linesegment length="0" name="shape15.dragpoint1.lineseg4" orient="vertical" x="721.0" y="63.0"/>
+              <linesegment length="63" name="shape15.dragpoint1.lineseg5" orient="horizontal" x="721.0" y="63.0"/>
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="decision_icon" name="shape22" shapetype="decision" userlabel="CICD_TEST_MODE = TEST?" x="240.0" y="48.0">
+          <configuration>
+            <decision comparison="equals" name="CICD_TEST_MODE = TEST?">
+              <decisionvalue valueType="process">
+                <processparameter processproperty="CICD_TEST_MODE" processpropertydefaultvalue=""/>
+              </decisionvalue>
+              <decisionvalue valueType="static">
+                <staticparameter staticproperty="TEST"/>
+              </decisionvalue>
+            </decision>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="true" name="shape22.dragpoint1" text="True" toShape="shape12" x="416.0" y="57.0">
+              <linesegment length="0" name="shape22.dragpoint1.lineseg1" orient="horizontal" x="274.0" y="63.0"/>
+              <linesegment length="0" name="shape22.dragpoint1.lineseg2" orient="vertical" x="274.0" y="63.0"/>
+              <linesegment length="79" name="shape22.dragpoint1.lineseg3" orient="horizontal" x="274.0" y="63.0"/>
+              <linesegment length="0" name="shape22.dragpoint1.lineseg4" orient="vertical" x="353.0" y="63.0"/>
+              <linesegment label="True" length="63" name="shape22.dragpoint1.lineseg5" orient="horizontal" x="353.0" y="63.0"/>
+            </dragpoint>
+            <dragpoint identifier="false" name="shape22.dragpoint2" text="False" toShape="shape40" x="304.0" y="137.0">
+              <linesegment length="0" name="shape22.dragpoint2.lineseg1" orient="horizontal" x="274.0" y="63.0"/>
+              <linesegment length="0" name="shape22.dragpoint2.lineseg2" orient="vertical" x="274.0" y="63.0"/>
+              <linesegment length="23" name="shape22.dragpoint2.lineseg3" orient="horizontal" x="274.0" y="63.0"/>
+              <linesegment length="80" name="shape22.dragpoint2.lineseg4" orient="vertical" x="297.0" y="63.0"/>
+              <linesegment label="False" length="7" name="shape22.dragpoint2.lineseg5" orient="horizontal" x="297.0" y="143.0"/>
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="documentproperties_icon" name="shape36" shapetype="documentproperties" userlabel="Set Disk File Name DDP" x="800.0" y="48.0">
+          <configuration>
+            <documentproperties>
+              <documentproperty defaultValue="" isDynamicCredential="false" isTradingPartner="false" name="Disk - File Name" persist="false" propertyId="connector.disk.filename" shouldEncrypt="false">
+                <sourcevalues>
+                  <parametervalue key="1" valueType="profile">
+                    <profileelement elementId="49" elementName="AccountId (Record/Elements/AccountId)" profileId="bd3e1341-b26d-4160-a36f-5236b002ec13" profileType="profile.flatfile"/>
+                  </parametervalue>
+                  <parametervalue key="2" valueType="static">
+                    <staticparameter staticproperty=".txt"/>
+                  </parametervalue>
+                </sourcevalues>
+              </documentproperty>
+            </documentproperties>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape36.dragpoint1" toShape="shape13" x="976.0" y="57.0">
+              <linesegment length="0" name="shape36.dragpoint1.lineseg1" orient="horizontal" x="834.0" y="63.0"/>
+              <linesegment length="0" name="shape36.dragpoint1.lineseg2" orient="vertical" x="834.0" y="63.0"/>
+              <linesegment length="79" name="shape36.dragpoint1.lineseg3" orient="horizontal" x="834.0" y="63.0"/>
+              <linesegment length="0" name="shape36.dragpoint1.lineseg4" orient="vertical" x="913.0" y="63.0"/>
+              <linesegment length="63" name="shape36.dragpoint1.lineseg5" orient="horizontal" x="913.0" y="63.0"/>
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape39" shapetype="connectoraction" userlabel="" x="1216.0" y="48.0">
+          <configuration>
+            <connectoraction actionType="Send" allowDynamicCredentials="NONE" connectionId="51d98024-ae58-4f6b-9596-068069f4dd29" connectorType="disk" hideSettings="false" operationId="6c691d92-3fef-4236-afaf-c354fe3f7c4c">
+              <parameters/>
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape39.dragpoint1" toShape="shape7" x="1328.0" y="57.0">
+              <linesegment length="0" name="shape39.dragpoint1.lineseg1" orient="horizontal" x="1250.0" y="63.0"/>
+              <linesegment length="0" name="shape39.dragpoint1.lineseg2" orient="vertical" x="1250.0" y="63.0"/>
+              <linesegment length="47" name="shape39.dragpoint1.lineseg3" orient="horizontal" x="1250.0" y="63.0"/>
+              <linesegment length="0" name="shape39.dragpoint1.lineseg4" orient="vertical" x="1297.0" y="63.0"/>
+              <linesegment length="31" name="shape39.dragpoint1.lineseg5" orient="horizontal" x="1297.0" y="63.0"/>
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape40" shapetype="connectoraction" userlabel="" x="320.0" y="128.0">
+          <configuration>
+            <connectoraction actionType="Get" allowDynamicCredentials="NONE" connectionId="405fc706-f125-42e8-8b08-96f3b098ed72" connectorType="salesforce" hideSettings="false" operationId="f167699a-92f7-480c-8d87-a3db44e6ee79" parameter-profile="EMBEDDED|salesforceparameterchooser|f167699a-92f7-480c-8d87-a3db44e6ee79">
+              <parameters/>
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape40.dragpoint1" toShape="shape12" x="416.0" y="57.0">
+              <linesegment length="0" name="shape40.dragpoint1.lineseg1" orient="horizontal" x="354.0" y="143.0"/>
+              <linesegment length="0" name="shape40.dragpoint1.lineseg2" orient="vertical" x="354.0" y="143.0"/>
+              <linesegment length="39" name="shape40.dragpoint1.lineseg3" orient="horizontal" x="354.0" y="143.0"/>
+              <linesegment length="80" name="shape40.dragpoint1.lineseg4" orient="vertical" x="393.0" y="63.0"/>
+              <linesegment length="23" name="shape40.dragpoint1.lineseg5" orient="horizontal" x="393.0" y="63.0"/>
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </bns:object>
+  <bns:processOverrides>
+    <Overrides xmlns="">
+      <Connections>
+        <ConnectionOverride id="51d98024-ae58-4f6b-9596-068069f4dd29">
+          <field id="directory" label="Directory" overrideable="false" xpath="DiskSettings/@directory"/>
+        </ConnectionOverride>
+        <ConnectionOverride id="405fc706-f125-42e8-8b08-96f3b098ed72">
+          <field id="url" label="URL" overrideable="false" xpath="SalesforceSettings/@url"/>
+          <field id="user" label="User" overrideable="false" xpath="SalesforceSettings/AuthSettings/@user"/>
+          <field id="password" label="Password" overrideable="false" xpath="SalesforceSettings/AuthSettings/@password"/>
+          <field id="maxActiveConnections" label="Maximum Concurrent Connections" overrideable="false" xpath="SalesforceSettings/@maxActiveConnections"/>
+        </ConnectionOverride>
+      </Connections>
+      <PartnerOverrides/>
+      <Properties>
+        <PropertyOverride name="CICD_TEST_MODE"/>
+      </Properties>
+      <Extensions>
+        <ObjectDefinitions>
+          <objectDefinition connectionId="405fc706-f125-42e8-8b08-96f3b098ed72" connectorType="salesforce" id="405fc706-f125-42e8-8b08-96f3b098ed72Account" name="Salesforce Account (Salesforce sapadmin@boomidemo.com)" objectType="Account" userDefined="false">
+            <profiles>
+              <profile id="5c443d88-dbf4-46f2-9632-4f8caef0525f" name="SF_Account_QUERY_Response 14" operationId="f167699a-92f7-480c-8d87-a3db44e6ee79" operationProfilePath="//SalesforceGetAction/@responseProfile" operationProfileRole="output" operationType="query" type="profile.xml"/>
+              <profile id="6f442ab1-e8bc-4dd6-97f1-a6a39592e170" name="Sample SF_Account_QUERY_Response 2" operationId="f167699a-92f7-480c-8d87-a3db44e6ee79" operationProfileRole="undefined" operationType="query" type="profile.xml"/>
+            </profiles>
+          </objectDefinition>
+          <unusedProfiles/>
+        </ObjectDefinitions>
+        <DataMaps>
+          <unusedMaps/>
+        </DataMaps>
+      </Extensions>
+      <CrossReferenceOverrides/>
+      <PGPOverrides/>
+      <DefinedProcessPropertyOverrides/>
+    </Overrides>
+  </bns:processOverrides>
+</bns:Component>

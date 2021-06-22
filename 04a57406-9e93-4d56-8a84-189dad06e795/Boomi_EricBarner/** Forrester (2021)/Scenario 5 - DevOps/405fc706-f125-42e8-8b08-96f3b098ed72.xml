@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bns:Component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bns="http://api.platform.boomi.com/" folderFullPath="Boomi_EricBarner/** Forrester (2021)/Scenario 5 - DevOps" componentId="405fc706-f125-42e8-8b08-96f3b098ed72" version="1" name="Salesforce sapadmin@boomidemo.com" type="connector-settings" subType="salesforce" createdDate="2021-06-21T18:53:23Z" createdBy="eric_barner@dell.com" modifiedDate="2021-06-21T18:53:23Z" modifiedBy="eric_barner@dell.com" deleted="false" currentVersion="true" folderName="Scenario 5 - DevOps" folderId="Rjo0MTA1Mzg1" copiedFromComponentId="74f2a9e6-7bf7-4195-8712-42a8601b2b99" copiedFromComponentVersion="21">
+  <bns:encryptedValues>
+    <bns:encryptedValue path="//SalesforceSettings/AuthSettings/@password" isSet="true"/>
+  </bns:encryptedValues>
+  <bns:description/>
+  <bns:object>
+    <SalesforceSettings xmlns="" maxActiveConnections="10" url="https://login.salesforce.com/services/Soap/u/39.0" version="vx">
+      <AuthSettings password="f4f9cdd31253a37efbb9ab21f1a4023d40bb0f72f162228857931ab54781d10747bf121fa0b71693861deff7fe92d9dacee297815609f465e20d6277c6969fef" user="sapadmin@boomidemo.com"/>
+    </SalesforceSettings>
+  </bns:object>
+</bns:Component>

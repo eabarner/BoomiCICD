@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bns:Component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bns="http://api.platform.boomi.com/" folderFullPath="Boomi_EricBarner/** Forrester (2021)/Scenario 5 - DevOps" componentId="6c691d92-3fef-4236-afaf-c354fe3f7c4c" version="1" name="Write to Disk" type="connector-action" subType="disk" createdDate="2021-06-21T18:53:23Z" createdBy="eric_barner@dell.com" modifiedDate="2021-06-21T18:53:23Z" modifiedBy="eric_barner@dell.com" deleted="false" currentVersion="true" folderName="Scenario 5 - DevOps" folderId="Rjo0MTA1Mzg1" copiedFromComponentId="74f2a9e6-7bf7-4195-8712-42a8601b2b99" copiedFromComponentVersion="21">
+  <bns:encryptedValues/>
+  <bns:description/>
+  <bns:object>
+    <Operation xmlns="">
+      <Archiving directory="" enabled="false"/>
+      <Configuration>
+        <DiskSendAction createDirectory="true" writeOption="unique"/>
+      </Configuration>
+      <Tracking>
+        <TrackedFields/>
+      </Tracking>
+      <Caching/>
+    </Operation>
+  </bns:object>
+</bns:Component>
